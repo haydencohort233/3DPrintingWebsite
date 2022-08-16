@@ -1,4 +1,4 @@
-GitHub Respostiory for Valley3DPrints or valley3dprints.github.io
+GitHub Respository for Valley3DPrints or valley3dprints.github.io
 
 Follow us on Social Media:
 Instagram: @Valley3DPrints
