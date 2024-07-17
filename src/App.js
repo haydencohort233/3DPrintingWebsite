@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import HomeTab from './HomeTab';
+import QuoteForm from './QuoteForm';
+import BottomNav from './BottomNav';
+import { ThemeProvider } from '@mui/material/styles'; // Correct import for ThemeProvider
+import theme from './theme';
 
-function App() {
+const App = () => {
+  const [isQuoteFormVisible, setIsQuoteFormVisible] = useState(false);
+  const [navValue, setNavValue] = useState('home');
+
+  const handleOpenQuoteForm = () => {
+    console.log('Opening QuoteForm modal...');
+    setIsQuoteFormVisible(true);
+  };
+
+  const handleCloseQuoteForm = () => {
+    console.log('Closing QuoteForm modal...');
+    setIsQuoteFormVisible(false);
+  };
+
+  const handleNavChange = (event, newValue) => {
+    if (newValue === 'quote') {
+      handleOpenQuoteForm();
+    } else {
+      setNavValue(newValue);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      {navValue === 'home' && <HomeTab onOpenQuoteForm={handleOpenQuoteForm} />}
+      <QuoteForm isVisible={isQuoteFormVisible} onClose={handleCloseQuoteForm} />
+      <BottomNav value={navValue} onChange={handleNavChange} onRequestQuote={handleOpenQuoteForm} />
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
