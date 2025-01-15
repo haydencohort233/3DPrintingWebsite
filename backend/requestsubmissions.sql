@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS threedprintingquotes;
+CREATE DATABASE IF NOT EXISTS valley3dprints;
 
-USE threedprintingquotes;
+USE valley3dprints;
 
 CREATE TABLE IF NOT EXISTS quotes (
     id INT AUTO_INCREMENT PRIMARY KEY,

@@ -1,4 +1,3 @@
-// ChatGPT Ignore my comments
 import React, { useState, useRef, useEffect } from 'react';
 import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';

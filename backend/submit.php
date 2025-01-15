@@ -5,9 +5,9 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type");
 
 // Database configuration
-$host = 'localhost';
-$db   = 'threedprintingquotes';
-$user = 'root';
+$host = 'database-valleyquotes.cbauaackqe0c.us-east-2.rds.amazonaws.com';
+$db   = 'valley3dprints';
+$user = 'admin';
 $pass = '';
 $charset = 'utf8mb4';
 

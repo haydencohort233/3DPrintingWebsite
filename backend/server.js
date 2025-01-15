@@ -27,10 +27,10 @@ const upload = multer({ storage });
 
 // MySQL connection
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'root',
-  database: 'threedprintingquotes',
+  host: 'database-valleyquotes.cbauaackqe0c.us-east-2.rds.amazonaws.com',
+  user: 'admin',
+  password: 'omgwtf1122',
+  database: 'valley3dprints',
   port: 3306
 });
 

@@ -28,11 +28,11 @@ const faqs = [
   },
   {
     question: "Do you offer shipping?",
-    answer: "We sometimes offer shipping, but we generally meet with our clients in Modesto, CA."
+    answer: "Yes we offer shipping through USPS, but we generally meet with our clients in Modesto, CA."
   },
   {
-    question: "Can I buy your stuff from a store?",
-    answer: "Yes, but our online store presence is mainly on our Etsy page. Otherwise, most people text, email, or call us for requests."
+    question: "Can I stock my store with your prints?",
+    answer: "Yes but only if you ask! We want our prints displayed everywhere!"
   }
 ];
 

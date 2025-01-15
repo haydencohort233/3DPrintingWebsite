@@ -1,9 +1,9 @@
 {
   "name": "printingwebsite",
+  "homepage": "https://valley3dprints.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.19",
@@ -20,7 +20,6 @@
     "react-dom": "^18.3.1",
     "react-material-ui-carousel": "^3.4.2",
     "react-router-dom": "^6.23.1",
-=======
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.19",

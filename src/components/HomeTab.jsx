@@ -335,15 +335,15 @@ const HomeTab = ({ onOpenQuoteForm }) => {
         </Typography>
         <Typography variant="body1" paragraph sx={{ textAlign: 'center', mt: 2, mb: 4, fontFamily: 'Oswald, sans-serif' }}>
           We are a 3D Printing Service located in Modesto, California. We have been printing since the start of COVID in June 2020,
-          we have worked closely with some big local companies and many individuals to provide prototypes any printing requests.
+          we have worked closely with some big local companies and many individuals to provide prototypes and printing requests.
         </Typography>
         <Typography variant="body1" paragraph sx={{ textAlign: 'center', mt: 2, mb: 4, fontFamily: 'Oswald, sans-serif' }}>
           Some companies that we've worked with are The McHenry Museum, The SoiCo Candle Company, Luperia's Taqueria.
           We've also been at multiple vendor popups or tucked away in local shops.
         </Typography>
         <Typography variant="body1" paragraph sx={{ textAlign: 'center', mt: 2, mb: 4, fontFamily: 'Oswald, sans-serif' }}>
-          We are a part-time business and I work from my private residence, not a business location. I try to get things
-          done as soon as possible but there are delays that can happen from my life or due to machine complications.
+          We are a part-time business and I work from my private residence not a business location. However we can meet in person to discuss a project.
+           I try to get things done as soon as possible but there are delays that can happen from my life or due to machine complications.
         </Typography>
           </Grid>
           <Grid item xs={12} md={5} sx={{ mt: { xs: 0, md: 2 }, mb: 4 }}>
