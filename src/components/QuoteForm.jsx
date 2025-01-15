@@ -117,10 +117,10 @@ const QuoteForm = ({ isVisible, onClose }) => {
     });
 
     try {
-      const response = await fetch('http://localhost/submit.php', {
+      const response = await fetch('http://3.142.196.183:5000/submit-quote', {
         method: 'POST',
         body: formDataToSend
-      });
+      });      
 
       const result = await response.text();
       alert(result);
