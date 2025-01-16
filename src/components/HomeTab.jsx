@@ -9,11 +9,16 @@ import AssignmentIcon from '@mui/icons-material/Assignment';
 import StoreIcon from '@mui/icons-material/Store';
 import GoogleIcon from '@mui/icons-material/Google';
 import { keyframes } from '@emotion/react';
+import { Snackbar, Alert } from '@mui/material';
+import Tooltip from '@mui/material/Tooltip';
 
 const HomeTab = ({ onOpenQuoteForm }) => {
   const theme = useTheme();
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [status, setStatus] = useState('CLOSED');
+  const [isServerOnline, setIsServerOnline] = useState(false);
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
   useEffect(() => {
@@ -34,6 +39,26 @@ const HomeTab = ({ onOpenQuoteForm }) => {
     checkBusinessStatus();
     const interval = setInterval(checkBusinessStatus, 60000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const checkServerStatus = async () => {
+      try {
+        const response = await fetch('https://threedprintingwebsite.onrender.com/submit-quote', {
+          method: 'HEAD'
+        });
+        if (response.ok) {
+          setIsServerOnline(true);
+        } else {
+          setIsServerOnline(false);
+        }
+      } catch (error) {
+        console.error('Server check failed:', error);
+        setIsServerOnline(false);
+      }
+    };
+
+    checkServerStatus();
   }, []);
 
   const pulseAnimation = keyframes`
@@ -86,6 +111,23 @@ const HomeTab = ({ onOpenQuoteForm }) => {
 
   const thumbnailTemplate = (item) => {
     return <img src={item.thumbnailImageSrc} alt={item.alt} style={{ width: '100%' }} />;
+  };
+
+
+  const handleEmailCopy = () => {
+    navigator.clipboard.writeText('valley3dprints@gmail.com')
+      .then(() => {
+        setSnackbarMessage('Email copied to clipboard!');
+        setSnackbarOpen(true);
+      })
+      .catch(() => {
+        setSnackbarMessage('Failed to copy email.');
+        setSnackbarOpen(true);
+      });
+  };
+
+  const handleCloseSnackbar = () => {
+    setSnackbarOpen(false);
   };
 
   return (
@@ -173,42 +215,113 @@ const HomeTab = ({ onOpenQuoteForm }) => {
 
       <Grid container spacing={2} justifyContent="center" sx={{ mb: 2 }}>
         <Grid item xs={9} sm={6} md={4} sx={{ mb: { xs: 0.5, sm: 0 } }}>
-          <Card sx={{ textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 1, height: '60%', bgcolor: '#FF5722' }}>
+          <Card
+            sx={{
+              textAlign: 'center',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: '60%',
+              bgcolor: '#FF5722',
+              cursor: 'pointer',
+            }}
+            onClick={handleEmailCopy}
+          >
             <CardContent>
-              <Typography variant="h6" component="div" noWrap sx={{ color: 'white', fontFamily: 'Oswald, sans-serif' }}>
+              <Typography
+                variant="h6"
+                component="div"
+                noWrap
+                sx={{ color: 'white', fontFamily: 'Oswald, sans-serif' }}
+              >
                 Email:
               </Typography>
-              <Typography variant="body2" noWrap sx={{ color: 'black', fontFamily: 'Oswald, sans-serif' }}>
+              <Typography
+                variant="body2"
+                noWrap
+                sx={{ color: 'black', fontFamily: 'Oswald, sans-serif', cursor: 'pointer' }}
+              >
                 valley3dprints@gmail.com
               </Typography>
             </CardContent>
           </Card>
         </Grid>
+
         <Grid item xs={9} sm={6} md={4} sx={{ mb: { xs: 0.5, sm: 0 }, mt: { xs: -6, sm: 0 } }}>
-          <Card sx={{ textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 1, height: '60%', bgcolor: '#FF5722' }}>
+          <Card
+            sx={{
+              textAlign: 'center',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: 1,
+              height: '60%',
+              bgcolor: '#FF5722',
+            }}
+          >
             <CardContent>
-              <Typography variant="h6" component="div" noWrap sx={{ color: 'white', fontFamily: 'Oswald, sans-serif' }}>
+              <Typography
+                variant="h6"
+                component="div"
+                noWrap
+                sx={{ color: 'white', fontFamily: 'Oswald, sans-serif' }}
+              >
                 Phone:
               </Typography>
-              <Typography variant="body2" noWrap sx={{ color: 'black', fontFamily: 'Oswald, sans-serif' }}>
+              <Typography
+                variant="body2"
+                noWrap
+                sx={{ color: 'black', fontFamily: 'Oswald, sans-serif' }}
+              >
                 1 (209) 202-3221
               </Typography>
             </CardContent>
           </Card>
         </Grid>
+
         <Grid item xs={9} sm={6} md={4} sx={{ mb: { xs: -6, md: 0, sm: -6 }, mt: { xs: -6, sm: -5, md: 0, lg: 0 } }}>
-          <Card sx={{ textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 1, height: '60%', bgcolor: '#FF5722' }}>
+          <Card
+            sx={{
+              textAlign: 'center',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: 1,
+              height: '60%',
+              bgcolor: '#FF5722',
+            }}
+          >
             <CardContent>
-              <Typography variant="h6" component="div" noWrap sx={{ color: 'white', fontFamily: 'Oswald, sans-serif' }}>
+              <Typography
+                variant="h6"
+                component="div"
+                noWrap
+                sx={{ color: 'white', fontFamily: 'Oswald, sans-serif' }}
+              >
                 Location:
               </Typography>
-              <Typography variant="body2" noWrap sx={{ color: 'black', fontFamily: 'Oswald, sans-serif' }}>
+              <Typography
+                variant="body2"
+                noWrap
+                sx={{ color: 'black', fontFamily: 'Oswald, sans-serif' }}
+              >
                 East Modesto, CA
               </Typography>
             </CardContent>
           </Card>
         </Grid>
       </Grid>
+
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={3000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+      >
+        <Alert onClose={handleCloseSnackbar} severity="success">
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
 
       <Box sx={{ mt: { xs: 0, sm: 0, md: -6, lg: -5 }, display: 'flex', justifyContent: 'center', alignItems: 'center', mb: 2, fontFamily: 'Oswald, sans-serif' }}>
         <Rating name="read-only" value={4.6} readOnly precision={0.5} />
@@ -231,25 +344,42 @@ const HomeTab = ({ onOpenQuoteForm }) => {
 
       <Grid container spacing={2} justifyContent="center" alignItems="center" sx={{ mt: 2 }}>
         <Grid item xs={12} sm={6} md={4} sx={{ display: 'flex', justifyContent: 'center' }}>
-        <Button
-          onClick={onOpenQuoteForm}
-          variant="contained"
-          color="secondary"
-          startIcon={<AssignmentIcon />}
-          sx={{
-            bgcolor: '#FF5722',
-            fontSize: '1.1rem',
-            fontWeight: 'bold',
-            padding: '12px 18px',
-            fontFamily: 'Oswald, sans-serif',
-            width: '100%',
-            animation: `${pulseAnimation} 2s infinite`,
-            '&:hover': { bgcolor: '#EF6C00' }
-          }}
+        <Tooltip
+          title={
+            isServerOnline
+              ? ''
+              : 'Quote requests offline - Email or give us a call/text'
+          }
+          arrow
+          placement="top"
         >
-          Request a Quote
-        </Button>
+          <span>
+            <Button
+              onClick={isServerOnline ? onOpenQuoteForm : null}
+              variant="contained"
+              color="secondary"
+              startIcon={isServerOnline ? <AssignmentIcon /> : null}
+              disabled={!isServerOnline}
+              sx={{
+                bgcolor: isServerOnline ? '#FF5722' : '#9E9E9E',
+                fontSize: '1.1rem',
+                fontWeight: 'bold',
+                padding: '12px 18px',
+                fontFamily: 'Oswald, sans-serif',
+                width: '100%',
+                animation: isServerOnline ? `${pulseAnimation} 2s infinite` : 'none',
+                '&:hover': {
+                  bgcolor: isServerOnline ? '#EF6C00' : '#9E9E9E',
+                  cursor: isServerOnline ? 'pointer' : 'not-allowed',
+                },
+              }}
+            >
+              Request a Quote
+            </Button>
+          </span>
+        </Tooltip>
         </Grid>
+
         <Grid item xs={12} sm={6} md={4} sx={{ display: 'flex', justifyContent: 'center' }}>
           <Button
             component="a"

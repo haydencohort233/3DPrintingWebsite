@@ -1,0 +1,125 @@
+/* Dialog styles */
+.dialog {
+    width: 90vw;
+    max-width: 600px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  /* Header styles */
+  .dialog .p-dialog-header {
+    background-color: #333333;
+    color: #ffcc00;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px;
+    border-bottom: 1px solid #4caf50;
+  }
+  
+  /* Dialog content styles */
+  .dialog .p-dialog-content {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    padding: 20px;
+    max-height: 60vh;
+    overflow-y: auto;
+    border-bottom: 1px solid #4caf50;
+  }
+  
+  /* Form container styles */
+  .form {
+    background-color: #2c2c2c;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: #e0e0e0;
+  }
+  
+  /* Field group styles */
+  .fieldGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  /* Input and Textarea styles */
+  .input,
+  .textarea,
+  .dropdown {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #4caf50;
+    border-radius: 5px;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    font-size: 14px;
+  }
+  
+  .input:focus,
+  .textarea:focus,
+  .dropdown:focus {
+    border-color: #ff5722;
+    outline: none;
+    box-shadow: 0 0 5px #ff5722;
+  }
+  
+  /* Label styles */
+  label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #f0a500;
+  }
+  
+  /* Required field indicator */
+  .required {
+    color: #ff5722;
+    font-size: 16px;
+    margin-left: 5px;
+  }
+  
+  /* Error message styles */
+  .error {
+    color: #ff4d4d;
+    font-size: 12px;
+  }
+  
+  /* FileUpload styles */
+  .fileUpload {
+    border: 1px solid #4caf50;
+    border-radius: 5px;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    padding: 10px;
+  }
+  
+  /* Actions (button container) styles */
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  /* Media query for mobile devices */
+  @media screen and (max-width: 600px) {
+    .dialog {
+      width: 95vw;
+    }
+  
+    .form {
+      padding: 10px;
+    }
+  
+    .input,
+    .textarea,
+    .dropdown {
+      font-size: 12px;
+    }
+  
+    label {
+      font-size: 12px;
+    }
+  }
+  

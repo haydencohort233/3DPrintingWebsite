@@ -11,8 +11,8 @@ export const photos = [
     src: "/images/slide1.png", 
     tags: ["Arts & Crafts", "Multicolor", "Custom"], 
     description: "A beautiful multicolor art piece", 
-    longDescription: "Long description.", 
-    date: "2023-05-01", credits: "John Doe", material: "PLA", 
+    longDescription: "A Hello Kitty Tray for Beading. There's many rows to lay them out flat to pick up easier.", 
+    date: "2023-05-01", credits: "Valley3DPrints", material: "PLA", 
     alternatives: ["/images/slide1-1.png"] 
   },
   { 
@@ -42,7 +42,7 @@ export const photos = [
   { 
     src: "/images/slide6-1.png", tags: ["Holiday", "Custom"], 
     description: "Heart-Shape Ashtray & Debowler", 
-    longDescription: "Long description.", 
+    longDescription: "A heart-shape ashtray and used for cleaning bowls without getting your hands dirty.", 
     date: "2023-09-10", credits: "Valley3DPrints", material: "PLA", 
     alternatives: ["/images/slide6-2.png", "/images/slide6-3.png"] 
   },
@@ -56,21 +56,21 @@ export const photos = [
   { 
     src: "/images/slide8-1.png", tags: ["Thingiverse"], 
     description: "Miniature Movie Theater Model", 
-    longDescription: "Long description.", 
+    longDescription: "Requested by a local customer for his miniature town. All 4 walls but no roof.", 
     date: "2023-09-10", credits: "Valley3DPrints", material: "PLA", 
     alternatives: ["/images/slide8-2.png"] 
   },
   { 
     src: "/images/slide9-1.png", tags: ["Holiday", "Custom"], 
     description: "Heart-Shape Bud Scooper", 
-    longDescription: "Long description.", 
+    longDescription: "Used to pick up cannabis without getting your hands sticky. It's very cute!", 
     date: "2023-09-10", credits: "Valley3DPrints", material: "PLA", 
     alternatives: ["/images/slide9-2.png"] 
   },
   { 
     src: "/images/slide10-1.png", tags: ["Gaming", "Thingiverse"], 
     description: "Master Sword from Legend of Zelda", 
-    longDescription: "Long description.", 
+    longDescription: "The Master Sword built of multiple parts with a metal rod inside of it for stability.", 
     date: "2023-09-10", credits: "TBA", material: "PLA", 
     alternatives: ["/images/slide10-2.png", "/images/slide10-3.png"] 
   },
@@ -84,7 +84,7 @@ export const photos = [
   { 
     src: "/images/slide12-1.png", tags: ["Request"], 
     description: "Wind Sensor Mounts", 
-    longDescription: "Long description.", 
+    longDescription: "Used for farms to detect wind speeds for automatic maintenance.", 
     date: "2023-09-10", credits: "N/A", material: "PLA"
   },
   { 
